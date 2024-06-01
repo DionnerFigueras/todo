@@ -1,0 +1,64 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  id: Int!
+  description: String!
+  done: Boolean!
+}
+
+type EmployOffer {
+  id: Int!
+  title: String!
+  yearsOfExperience: Int!
+  modality: String!
+  type: String!
+  salary: Float!
+  hiringDate: String!
+}
+
+type Query {
+  todos(status: Boolean): [Todo!]!
+  todo(id: Int!): Todo!
+  employOffers: [EmployOffer!]!
+  findEmployOfferById(id: Int!): EmployOffer!
+}
+
+type Mutation {
+  createTodo(createTodoInput: createTodoInputs!): Todo!
+  updateTodo(updateTodoInputs: updateTodoInputs!): Todo!
+  deleteTodo(id: Int!): String!
+  createEmployOffer(employOffer: createEmployOfferInputs!): EmployOffer!
+  updateEmployOffer(updateEmployOffer: updateEmployOfferInputs!): EmployOffer!
+  removeEmployOffer(id: Int!): String!
+}
+
+input createTodoInputs {
+  description: String!
+}
+
+input updateTodoInputs {
+  id: Int!
+  description: String
+  done: Boolean
+}
+
+input createEmployOfferInputs {
+  title: String!
+  yearsOfExperience: Int!
+  modality: String!
+  type: String!
+  salary: Int!
+  hiringDate: String!
+}
+
+input updateEmployOfferInputs {
+  id: Int!
+  title: String
+  yearsOfExperience: Int
+  modality: String
+  type: String
+  salary: Int
+  hiringDate: String
+}
